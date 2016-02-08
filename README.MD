@@ -1,4 +1,5 @@
-Installer options:
+# Installer options
+
 * username
 * password
 * environment to download (can support both manjaro and archlinux)
@@ -7,6 +8,12 @@ Installer options:
 * time-zone
 * partitioning?
 * keyboard layout?
+
+# Pull Requests
+
+Please run format-code.sh before submitting a pull request. You will need the clang-format executable to run it. If you are on an Arch or Manjaro system, install the `clang-tools-extra` package to install clang-format.
+
+# Documentation
 
 Using chroot from glibc: http://linux.die.net/man/2/chroot
 
