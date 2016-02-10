@@ -44,6 +44,7 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 # Create main target
 add_executable(manjaro-arm-installer-cli
-  src/main.cpp)
+  src/main.cpp
+  src/pstream.h)
 
 create_source_groups(manjaro-arm-installer-cli)

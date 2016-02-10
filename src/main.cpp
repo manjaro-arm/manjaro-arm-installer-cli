@@ -1,15 +1,28 @@
+#include "pstream.h"
 #include <iostream>
-#include <unistd.h> // for chroot
-#include <cerrno> // errno variable
+#include <string>
+
+// append 2>&1 to the command to get stderr output
+void exec(std::string command){
+    redi::ipstream proc(command, redi::pstreams::pstderr);
+    std::string line;
+    while (std::getline(proc.out(), line)) {
+        std::cout << line << std::endl;
+    }
+}
+
+std::string chrootPrefix(std::string command) {
+    std::string targetFSPath("/home/owner/Downloads/chroot-env/");
+    return "chroot " + targetFSPath + " " + command;
+}
 
 int main(int argc, char** argv) {
     std::cout << "Note: this program must be run as root\n";
-    int result = chroot("/home/owner/Downloads/chroot-env/");
 
-    if (result == 0) {
-        std::cout << "Chroot success." << std::endl;
-    } else {
-        std::cout << "Chroot failure: " << result << " " << errno << std::endl;
-    }
+    // TODO: ask for tar.gz location
+    // TODO: Extract tar.gz
+    // TODO: Copy qemu-arm-static
+
+    exec(chrootPrefix("/qemu-arm-static /bin/ls"));
     return 0;
 }
