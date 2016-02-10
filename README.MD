@@ -18,6 +18,8 @@ This git repository includes a `qemu-arm-static` binary in `bin/`. This binary i
 
 # Build Instructions
 
+You will need `cmake` installed
+
 1. mkdir build
 2. cd build
 3. cmake ..
