@@ -11,18 +11,18 @@ void exec(std::string command){
     }
 }
 
-std::string chrootPrefix(std::string command) {
+void chrootExec(std::string command) {
     std::string targetFSPath("/home/owner/Downloads/chroot-env/");
-    return "chroot " + targetFSPath + " " + command;
+    exec("chroot " + targetFSPath + " /qemu-arm-static " + command);
 }
 
 int main(int argc, char** argv) {
     std::cout << "Note: this program must be run as root\n";
 
-    // TODO: ask for tar.gz location
+    // TODO: Ask for tar.gz location
     // TODO: Extract tar.gz
     // TODO: Copy qemu-arm-static
 
-    exec(chrootPrefix("/qemu-arm-static /bin/ls"));
+    chrootExec("/bin/ls");
     return 0;
 }
