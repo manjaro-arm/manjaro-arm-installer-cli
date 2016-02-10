@@ -27,4 +27,4 @@ You will need `cmake` installed
 
 # Pull Requests
 
-Please run format-code.sh before submitting a pull request. You will need the clang-format executable to run it. If you are on an Arch or Manjaro system, install the `clang-tools-extra` package to install clang-format.
+Please run format-code.sh before submitting a pull request. You will need the `clang-format` executable to run it. If you are on an Arch or Manjaro system, install the `clang-tools-extra` package to install clang-format.
